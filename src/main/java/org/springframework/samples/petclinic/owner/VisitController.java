@@ -80,6 +80,10 @@ class VisitController {
 	// Spring MVC calls method loadPetWithVisit(...) before processNewVisitForm is called
 	@PostMapping("/owners/{ownerId}/pets/{petId}/visits/new")
 	public String processNewVisitForm(@Valid Visit visit, BindingResult result) {
+        for (int i = 0; i < 10;)  {
+            System.out.println("Awaiting... step " + i);
+            i++;
+        }
 		if (result.hasErrors()) {
 			return "pets/createOrUpdateVisitForm";
 		}
